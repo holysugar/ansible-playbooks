@@ -1,0 +1,15 @@
+---
+- name: "Setup Vagrant"
+  hosts: vagrant
+  remote_user: vagrant
+  gather_facts: no
+  vars:
+    - user_home: '/home/vagrant'
+    - ruby_versions:
+      - 2.1.1
+      - 2.0.0-p451
+  roles:
+    - { role: git }
+    - { role: rbenv }
+    - { role: ruby }
+

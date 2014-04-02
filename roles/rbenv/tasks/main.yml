@@ -1,0 +1,16 @@
+- name: be sure rbenv is installed
+  git: repo=git://github.com/sstephenson/rbenv.git dest={{user_home}}/.rbenv
+  tags: install_rbenv
+
+- name: be sure rbenv is configured
+  copy: src=bash_profile dest={{user_home}}/.bash_profile
+  tags: configure_rbenv
+
+- name: be sure ruby-build is installed
+  git: repo=git://github.com/sstephenson/ruby-build.git dest={{user_home}}/.rbenv/plugins/ruby-build
+  tags: install_ruby_build
+
+- name: be sure rbenv-default-gems is installed
+  git: repo=git://github.com/sstephenson/rbenv-default-gems.git dest={{user_home}}/.rbenv/plugins/rbenv-default-gems
+  tags: install_rbenv_default_gems
+

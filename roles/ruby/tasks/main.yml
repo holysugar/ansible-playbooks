@@ -1,0 +1,20 @@
+- include: requirements.yml
+  sudo: on
+
+- name: set .rbenv/default-gems
+  copy: src=default-gems dst={{user_home}}/.rbenv/default-gems
+  with_items: default_gems
+  tags:
+    - ruby
+
+- name: installs all rubies
+  shell: bash -lc "rbenv install -f {{item}}"
+  with_items: ruby_versions
+  tags:
+    - ruby
+
+- name: register global ruby
+  shell: bash -lc "rbenv global {{ruby_versions[0]}}"
+  tags:
+    - ruby
+

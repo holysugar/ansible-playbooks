@@ -1,0 +1,3 @@
+- name: be sure git installed
+  sudo: on
+  apt: name=git

@@ -1,0 +1,5 @@
+
+export RBENV_ROOT=~/.rbenv
+export PATH=~/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
