@@ -1,3 +1,6 @@
 bundler
 rake
 pry
+observr
+guard
+guard-rspec
