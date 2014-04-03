@@ -10,6 +10,7 @@
       - 2.0.0-p451
   roles:
     - { role: git }
+    - { role: devtools }
     - { role: rbenv }
     - { role: mariadb }
     - { role: ruby }

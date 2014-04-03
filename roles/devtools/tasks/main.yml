@@ -1,0 +1,17 @@
+---
+- name: be sure development tools installed
+  apt: name={{ item }} state=installed update-cache=yes
+  with_items:
+    - vim
+    - emacs24
+    - emacs24-el
+    - lv
+    - zsh
+    - nkf
+    - wget
+    - curl
+    - w3m
+    - curl
+    - pandoc
+  sudo: on
+
