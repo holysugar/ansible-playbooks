@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = 'vagrant-rails'
 
   config.vm.provision "ansible" do |ansible|
-    ansible.inventory_path = "vagrant_hosts"
+    ansible.inventory_path = "vagrant-hosts"
     ansible.limit = 'all'
     ansible.playbook = "vagrant.yml"
   end

@@ -2,8 +2,7 @@
   sudo: on
 
 - name: set .rbenv/default-gems
-  copy: src=default-gems dst={{user_home}}/.rbenv/default-gems
-  with_items: default_gems
+  copy: src="default-gems" dest="{{user_home}}/.rbenv/default-gems"
   tags:
     - ruby
 
