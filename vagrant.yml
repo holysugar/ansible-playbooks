@@ -11,5 +11,6 @@
   roles:
     - { role: git }
     - { role: rbenv }
+    - { role: mariadb }
     - { role: ruby }
 

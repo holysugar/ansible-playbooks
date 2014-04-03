@@ -1,0 +1,30 @@
+---
+# see https://downloads.mariadb.org/mariadb/repositories/#mirror=yamagata-university&distro=Ubuntu&distro_release=saucy&version=10.0
+
+- name: be sure software-properties-common installed
+  apt: name=software-properties-common
+  sudo: on
+
+- name: be sure MariaDB apt key added
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0xcbcb082a1bb943db
+  sudo: on
+
+- name: be sure MariaDB apt repository added
+  apt_repository: repo='deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/ubuntu saucy main'
+  sudo: on
+  # saucy. other version update this...
+
+- name: be sure MariaDB client installed
+  apt: name=mariadb-client
+  sudo: on
+
+- name: be sure MariaDB server installed
+  apt: name=mariadb-server
+  sudo: on
+
+- name: be sure MariaDB server enabled
+  service: name=mysql state=running enabled=yes
+  sudo: on
+
+# user create ...
+#- include: initialize.yml
